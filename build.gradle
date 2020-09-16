@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'Vocabulul'
+    version = '1.0'
+    
+    manifest {
+        attributes(
+          'Main-Class': 'vocabulul.main.Main',
+      	  'Class-Path': '.'
+        )
+    }
+}
+
+
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {   
+    implementation 'com.google.guava:guava:29.0-jre'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE'
+    
+	compile 'org.jsoup:jsoup:1.13.1'
+	
+	testImplementation 'junit:junit:4.13'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.3.RELEASE'
+}
