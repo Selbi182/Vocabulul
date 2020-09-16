@@ -1,0 +1,34 @@
+Anforderungsanalyse
+-------------------
+
+
+
+Funktional:
+
+NEUER EINTRAG
+- REST-Endpoint, mit dem man neue Englische Wörter speichern kann
+	- Diese werden automatisch mit DeepL oder so übersetzt und gespeichert
+		- Den Scheiß irgendwie mit HTML-DOM-Fetchen-Gedöns? API kost Geld yo
+	- Evtl. auch mit sofortiger Response des Ergebnisses
+
+TRAINING
+- Zweiter REST-Endpoint, der die gespeicherten Wörter zurückgibt
+	- Mit Limit, neuste zuerst, älteste zuerst oder zufällig
+		- Später vielleicht auch mit Indexing, wie kacke man bei manchen Wörtern war (welche man härter trainieren muss)
+	- Hier kann dann auch die Ergebnisse mit eignenen Übersetzungen eines Tests zurückschicken
+		- Dann kriegt man auch gleich aufgetischt, wie kacke du bist. Die Ergebnisse werden gespeichert, damit später ein personalisiertes Training generiert werden kann
+	
+INTERFACES
+- Irgendwie muss der ganze Kram dann noch elegant eingetragen werden können, damit man das überhaupt benutzt. Ideen:
+	- Firefox-Addon
+		- Für den Start vielleicht auch erstmal nur ein UserScript
+	- Eine App, die sofort den Inhalt aus dem Clipboard im Handy vorschlägt, damit man das mit einem Knopfdruck hinzufügen kann
+	- Firefox MOBILE Addon (wenn überhaupt möglich)
+
+
+
+
+Nicht-Funktional:
+
+- Ne Anfrage mit Übersetzung sollte nicht mehr als 2 Sekunden RTT haben
+- Als DB was leichtes, der Bums muss nicht viel können
